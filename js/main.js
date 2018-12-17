@@ -39,16 +39,30 @@ function protocolObjectSelector(protocolArr)
 	}
 }
 
-function Card(cardJSON)
+
+//We're going to pretend this is an behavioral interface implementation
+function networkCardBehavior()
+{
+	this.displayCard = function(card)
+	{
+		console.log(card.port);
+	}
+}
+
+function Card(cardJSON, networkCardBehavior)
 {
 	this.port = cardJSON.port;
 	this.service = cardJSON.service;
 	this.transportLayerProtocol = cardJSON.transportLayerProtocol;
 	this.description=cardJSON.description;
+	this.networkCardBehavior = networkCardBehavior;
 
 	this.displayPort = function()
 	{
 		console.log(this.port);
 	}
+
+	this.networkCardBehavior.displayCard(this);
+	
 	
 }

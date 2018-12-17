@@ -46,10 +46,11 @@
 */
 
 	const protocolSelector = new protocolObjectSelector(protocols);
+	const netCardBehavior = new networkCardBehavior();
 
 //	protocolSelector.randomSelect();
 
-	let newCard = new Card(protocolSelector.randomSelect())
+	let newCard = new Card(protocolSelector.randomSelect(), netCardBehavior)
 
 	newCard.displayPort();
 	

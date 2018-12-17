@@ -10,11 +10,49 @@
 <body>
 	<h1>Study Guide</h1>
 
+	<div id="container">
+		<div id="card">
+			<div id="cardHead">
+				<h3 id="subject">{{SUBJECT}}</h3>
+			</div>
+			<div id="cardBody">
+				<div id="cardData">
+					<h4 id="port">PORT: <span id="somePort">{{SUMPORT}}</span></h4>
+					<h4 id="service">SERVICE: <input id="answer" type="textbox" value="Enter Answer Here"></input></h4>
+					<h4 id="transportLayer">Transport Layer Protocol (Layer 4): <span id="transportLayerProtocol">{{TRANSPORT LAYER PROTOCOL}}</span> </h4>
+					<h4 id="description">DESCRIPTION: <span hidden id="descriptionText">{{HIDDEN DESCRIPTION TEXT}}</span></h4>
+				</div>
+				<div id="buttonArea">
+					<button id="submit">SUBMIT</button> <button id="hint">HINT</button>
+				</div>
+			</div>
+		</div>
+		<div id="feedback">
+			<span id="feedbackArea">{{FEEDBACK AREA}}</span>
+		</div>
+	</div>
+
 	<script>
+		/*
 		for (var i = 0; i < protocols.length; i++)
 		{
-			console.log(protocols[i]);
+			console.log(protocols[i].port);
 		}
+		*/
+
+/*
+		let newCard = new Card(protocols[0]);
+		newCard.displayPort();
+*/
+
+	const protocolSelector = new protocolObjectSelector(protocols);
+
+//	protocolSelector.randomSelect();
+
+	let newCard = new Card(protocolSelector.randomSelect())
+
+	newCard.displayPort();
+	
 	</script>
 	
 </body>

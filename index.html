@@ -48,10 +48,13 @@
 
 	const protocolSelector = new protocolObjectSelector(protocols);
 	const netCardBehavior = new networkCardBehavior();
+	const CardFactory = new cardFactory(protocolSelector, netCardBehavior);
 
 //	protocolSelector.randomSelect();
+	
+	let newCard = CardFactory.createCard();
 
-	let newCard = new Card(protocolSelector.randomSelect(), netCardBehavior)
+	//let newCard = new Card(protocolSelector.randomSelect(), netCardBehavior)
 
 //	newCard.displayCard(this)
 	

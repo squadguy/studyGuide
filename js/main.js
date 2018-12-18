@@ -40,6 +40,16 @@ function protocolObjectSelector(protocolArr)
 }
 
 
+function cardFactory(protocolSelector, netCardBehavior)
+{
+	this.protocolSelector = protocolSelector;
+	
+	this.createCard = function()
+	{
+		return new Card(this.protocolSelector.randomSelect(), netCardBehavior);
+	}
+}
+
 //We're going to pretend this is an behavioral interface implementation
 //Come back to this later
 function networkCardBehavior()
@@ -116,19 +126,18 @@ function giveHintBehavior(card)
 	let descriptionText = card.description;
 	let appendDescription = document.getElementById('descriptionText');
 	appendDescription.innerHTML = descriptionText;
-
-
-
 }
 
 //Make this into a compositie behavior for some object
 function checkAnswerBehavior(card)
 {
 	let answer = document.getElementById('answer').value;
+	let feedbackArea = document.getElementById('feedbackArea');
 
 		if (answer.toLowerCase() === card.service)
 		{
-			console.log("correct");
+			console.log("Right");
+
 		}
 		else
 		{

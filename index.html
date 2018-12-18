@@ -34,30 +34,13 @@
 	</div>
 
 	<script>
-		/*
-		for (var i = 0; i < protocols.length; i++)
-		{
-			console.log(protocols[i].port);
-		}
-		*/
-
-/*
-		let newCard = new Card(protocols[0]);
-		newCard.displayPort();
-*/
 
 	const protocolSelector = new protocolObjectSelector(protocols);
 	const netCardBehavior = new networkCardBehavior();
 	const CardFactory = new cardFactory(protocolSelector, netCardBehavior);
 
-//	protocolSelector.randomSelect();
-	
 	let newCard = CardFactory.createCard();
 
-	//let newCard = new Card(protocolSelector.randomSelect(), netCardBehavior)
-
-//	newCard.displayCard(this)
-	
 	newCard.buildHTML();
 
 	

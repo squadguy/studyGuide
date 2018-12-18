@@ -79,11 +79,6 @@ function Card(cardJSON, networkCardBehavior)
 	this.description=cardJSON.description;
 	this.networkCardBehavior = networkCardBehavior;
 
-	this.displayPort = function()
-	{
-		console.log(this.port);
-	}
-
 	this.networkCardBehavior.displayCard(this);
 	this.buildHTML = function()
 	{

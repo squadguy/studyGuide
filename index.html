@@ -10,6 +10,7 @@
 <body>
 	<h1>Study Guide</h1>
 
+	<span id="cool"></span>
 	<div id="container">
 		<div id="card">
 			<div id="cardHead">
@@ -20,10 +21,10 @@
 					<h4 id="port">PORT: <span id="somePort">{{SUMPORT}}</span></h4>
 					<h4 id="service">SERVICE: <input id="answer" type="textbox" value="Enter Answer Here"></input></h4>
 					<h4 id="transportLayer">Transport Layer Protocol (Layer 4): <span id="transportLayerProtocol">{{TRANSPORT LAYER PROTOCOL}}</span> </h4>
-					<h4 id="description">DESCRIPTION: <span hidden id="descriptionText">{{HIDDEN DESCRIPTION TEXT}}</span></h4>
+					<h4 id="description">DESCRIPTION: <span id="descriptionText">{{HIDDEN DESCRIPTION TEXT}}</span></h4>
 				</div>
 				<div id="buttonArea">
-					<button id="submit">SUBMIT</button> <button id="hint">HINT</button>
+					<button onclick="checkAnswerBehavior(newCard)" id="submit">SUBMIT</button> <button onclick="giveHintBehavior(newCard)" id="hint">HINT</button>
 				</div>
 			</div>
 		</div>
@@ -52,7 +53,10 @@
 
 	let newCard = new Card(protocolSelector.randomSelect(), netCardBehavior)
 
-	newCard.displayPort();
+//	newCard.displayCard(this)
+	
+	newCard.buildHTML();
+
 	
 	</script>
 	

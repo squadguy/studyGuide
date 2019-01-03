@@ -1,51 +1,5 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Study Guide</title>
-
-	<script src="./js/main.js"></script>
-	<script src="./js/protocols.js"></script>
-
-</head>
-<body>
-	<h1>Study Guide</h1>
-
-	<span id="cool"></span>
-	<div id="container">
-		<div id="card">
-			<div id="cardHead">
-				<h3 id="subject">{{SUBJECT}}</h3>
-			</div>
-			<div id="cardBody">
-				<div id="cardData">
-					<h4 id="port">PORT: <span id="somePort">{{SUMPORT}}</span></h4>
-					<h4 id="service">SERVICE: <input id="answer" type="textbox" value="Enter Answer Here"></input></h4>
-					<h4 id="transportLayer">Transport Layer Protocol (Layer 4): <span id="transportLayerProtocol">{{TRANSPORT LAYER PROTOCOL}}</span> </h4>
-					<h4 id="description">DESCRIPTION: <span id="descriptionText">{{HIDDEN DESCRIPTION TEXT}}</span></h4>
-				</div>
-				<div id="buttonArea">
-					<button onclick="checkAnswerBehavior(newCard)" id="submit">SUBMIT</button> <button onclick="giveHintBehavior(newCard)" id="hint">HINT</button>
-				</div>
-			</div>
-		</div>
-		<div id="feedback">
-			<span id="feedbackArea">{{FEEDBACK AREA}}</span>
-		</div>
-	</div>
-
-	<script>
-
-	const protocolSelector = new protocolObjectSelector(protocols);
-	//const netCardBehavior = new networkCardBehavior();
-	const CardFactory = new cardFactory(protocolSelector);
-
-	let newCard = CardFactory.createCard();
-
-	newCard.buildHTML();
-
-	
-	</script>
-	
-</body>
+<html>
+	<body>
+		<h1> Hello World </h1>
+	</body>
 </html>

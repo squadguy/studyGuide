@@ -3,16 +3,30 @@
 		<h1> Hello World </h1>
 		<input type="text" id="userAnswer" placeholder="HI"></input>
 		<br />
-		<button type="submit" onclick="validator()">Submit</button>
+		<button type="submit" onclick="theValidator.execute()">Submit</button>
 	</body>
 	<script>
-		function validator()
+		function Validator(answer)
 		{
+			this.correctAnswer = answer;
 			this.userAnswer = document.getElementById('userAnswer').value;
-			console.log(this.userAnswer);
+			this.execute = function(){
+				console.log(this.userAnswer + " " + this.correctAnswer.getAnswer());
+			}
+		}
+
+		function Answer()
+		{
+			this.answer = "Bozinga!";
+			this.getAnswer = function()
+			{
+				return this.answer;
+			}
 		}
 		
-		validator();
+
+		let theAnswer = new Answer();
+		let theValidator = new Validator(theAnswer);
 	</script>
 </html>
 

@@ -5,6 +5,7 @@
 	<title>Study Guide</title>
 
 	<script src="./js/main.js"></script>
+	<script src="./js/protocols.js"></script>
 
 </head>
 <body>
@@ -36,8 +37,8 @@
 	<script>
 
 	const protocolSelector = new protocolObjectSelector(protocols);
-	const netCardBehavior = new networkCardBehavior();
-	const CardFactory = new cardFactory(protocolSelector, netCardBehavior);
+	//const netCardBehavior = new networkCardBehavior();
+	const CardFactory = new cardFactory(protocolSelector);
 
 	let newCard = CardFactory.createCard();
 

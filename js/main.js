@@ -8,14 +8,17 @@ function protocolObjectSelector(protocolArr)
 	}
 }
 
-
-function cardFactory(protocolSelector, netCardBehavior)
+function reset(card)
+{
+	card = cardFactory.createCard(protocolSelector);
+}
+function cardFactory(protocolSelector)
 {
 	this.protocolSelector = protocolSelector;
 	
 	this.createCard = function()
 	{
-		return new Card(this.protocolSelector.randomSelect(), netCardBehavior);
+		return new Card(this.protocolSelector.randomSelect());
 	}
 }
 
@@ -46,9 +49,9 @@ function Card(cardJSON, networkCardBehavior)
 	this.service = cardJSON.service;
 	this.transportLayerProtocol = cardJSON.transportLayerProtocol;
 	this.description=cardJSON.description;
-	this.networkCardBehavior = networkCardBehavior;
+//	this.networkCardBehavior = networkCardBehavior;
 
-	this.networkCardBehavior.displayCard(this);
+	//this.networkCardBehavior.displayCard(this);
 	this.buildHTML = function()
 	{
 		const somePort = document.getElementById('somePort');

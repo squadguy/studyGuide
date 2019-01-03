@@ -1,4 +1,7 @@
 <html>
+	<head>
+		<script src="./data.js"></script>
+	</head>
 	<body>
 		<h1> Hello World </h1>
 		<input type="text" id="userAnswer" placeholder="HI"></input>
@@ -6,18 +9,26 @@
 		<button type="submit" onclick="theValidator.execute()">Submit</button>
 	</body>
 	<script>
+		console.log(answers);
 		function Validator(answer)
 		{
 			this.correctAnswer = answer;
 			this.userAnswer = document.getElementById('userAnswer').value;
 			this.execute = function(){
 				console.log(this.userAnswer + " " + this.correctAnswer.getAnswer());
+			
+				if(this.userAnswer === this.correctAnswer.getAnswer())
+				{
+					console.log("Right" + " " + this.userAnswer + " " + this.correctAnswer.getAnswer());
+				}
+				else
+					console.log("Wrong" + " " + this.userAnswer + " " + this.correctAnswer.getAnswer());
 			}
 		}
 
 		function Answer()
 		{
-			this.answer = "Bozinga!";
+			this.answer = "bye";
 			this.getAnswer = function()
 			{
 				return this.answer;

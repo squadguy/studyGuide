@@ -1,15 +1,15 @@
 <html>
 	<body>
 		<h1> Hello World </h1>
-		<input type="text" id="answer" placeholder="Enter Answer Here"></input>
+		<input type="text" id="answer" placeholder="HI"></input>
 		<br />
-		<button type="submit">Submit</button>
+		<button type="submit" onclick="validator()">Submit</button>
 	</body>
 	<script>
 		function validator()
 		{
-			console.log("HELLO WORLD");
-
+			this.answer = document.getElementById('answer').value;
+			console.log(this.answer);
 		}
 		
 		validator();

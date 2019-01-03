@@ -4,12 +4,20 @@
 	</head>
 	<body>
 		<h1> Hello World </h1>
+		<div id = "question"></div>
 		<input type="text" id="userAnswer" placeholder="HI"></input>
 		<br />
 		<button type="submit" onclick="theValidator.execute()">Submit</button>
 	</body>
 	<script>
-		console.log(answers);
+
+		function askQuestion(questionBank)
+		{
+				document.getElementById("question").innerHTML = (questionBank[Math.floor(Math.random() * questionBank.length)].question);
+		}
+
+		console.log(askQuestion(answers));
+	
 		function Validator(answer)
 		{
 			this.correctAnswer = answer;
